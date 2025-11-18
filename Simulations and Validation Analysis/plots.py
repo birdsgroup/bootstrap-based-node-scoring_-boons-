@@ -17,9 +17,11 @@ parameter_names = ['$\\mathtt{obs}$', '$\\mu$', '$\\mu-\\sigma$', '$\\mu-2\\sigm
 def muVsSigma(mu, sigma, s, path):
     plt.figure()
     plt.scatter(mu, sigma, color = '#CC79A7')
+    plt.xticks(fontsize=15)
+    plt.yticks(fontsize=15)
     plt.xlabel('$\\mu$', fontsize=16)
     plt.ylabel('$\\sigma$', fontsize=16)
-    plt.title('$\\mu$ v/s $\\sigma$ \n s = ' + str(s))
+    plt.title('$\\mu$ v/s $\\sigma$ \n s = ' + str(s), fontsize=18)
     plt.savefig(path)
     plt.close()
     return
@@ -44,9 +46,11 @@ def Plot(parameters: 'dict', reference: 'dict', klim: 'int', s: 'int', n: 'int',
     plt.plot(pd.Series(values.index/n, index=values.index), linestyle='--', color='#CC79A7', label='random')
     plt.legend()
     plt.ylim(0, 1)
+    plt.xticks(fontsize=15)
+    plt.yticks(fontsize=15)
     plt.xlabel('k', fontsize=16)
     plt.ylabel('POG' if plottype == 'cat' else 'Recall @ k', fontsize=16)
-    plt.title(('CAT Plot' if plottype == 'cat' else 'Recall @ k') + ' \n s = ' + str(s))
+    plt.title(('CAT Plot' if plottype == 'cat' else 'Recall @ k') + ' \n s = ' + str(s), fontsize=18)
     plt.savefig(path)
     plt.close()
     return
