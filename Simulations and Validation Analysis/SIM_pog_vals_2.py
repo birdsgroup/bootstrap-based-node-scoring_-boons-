@@ -19,7 +19,7 @@ from time import time
 # %% Inputs and Global Variables
 n = 400
 B = 1000
-klim = 100
+klim = 200
 
 s_disc = 706
 s = s_disc

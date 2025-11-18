@@ -20,7 +20,7 @@ import plots
 # %% Global Variables / Inputs
 n = 400
 B = 1000
-klim = 100
+klim = 200
 
 SampleSizes = [53, 73, 237, 670]
 '''
