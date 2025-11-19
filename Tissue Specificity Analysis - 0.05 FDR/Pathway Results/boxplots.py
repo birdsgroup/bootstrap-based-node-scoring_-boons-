@@ -46,17 +46,19 @@ def boxplots(pathway, Tissues, gtype, centrality):
                 
             plot_data = pd.DataFrame(columns=['value', 'gene_type', 'Tissue'])
             plot_data['value'] = parameters[i]
-            plot_data.loc[specific_indices, 'gene_type'] = 'S'
-            plot_data.loc[other_indices, 'gene_type'] = 'O'
+            plot_data.loc[specific_indices, 'gene_type'] = 'Specific Genes'
+            plot_data.loc[other_indices, 'gene_type'] = 'Other Genes'
             plot_data['Tissue'] = tissue
             plot_data_list.append(plot_data)
         
         plot_data = pd.concat(plot_data_list, ignore_index=True)
         plt.figure()
         sns.boxplot(x = 'Tissue', y = 'value', hue = 'gene_type', data=plot_data, palette='colorblind')
-        plt.ylabel('Centrality Scores', fontsize=13)
-        plt.xlabel('Tissues', fontsize=13)
-        plt.title(parameter_names[i], color = '#843C0C', fontsize=24)
+        plt.xticks(fontsize=15)
+        plt.yticks(fontsize=15)
+        plt.ylabel('Centrality Scores', fontsize=16)
+        plt.xlabel('Tissues', fontsize=16)
+        plt.title(parameter_names[i], color = '#843C0C', fontsize=18)
         plt.savefig('boxplots/' + centrality + '_' + pathway + '_' + file_names[i] + '.pdf')
         plt.close()
 

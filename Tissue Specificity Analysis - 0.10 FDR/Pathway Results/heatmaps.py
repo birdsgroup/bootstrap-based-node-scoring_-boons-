@@ -38,7 +38,7 @@ def plot_hmap(centrality, gtype, Tissues, Paths):
         plt.xticks(rotation=45, ha='right')        
         plt.xlabel('Gene Set ID\'s', fontsize=13)
         plt.ylabel('Tissues', fontsize=13)
-        plt.title(names[i] + ' metric', color = '#843C0C', fontsize=24)
+        plt.title(names[i] + ' scoring', color = '#843C0C', fontsize=24)
         plt.tight_layout()
         plt.savefig(gtype + '/' + centrality + '_' + parameter + '.pdf')
         plt.close()
