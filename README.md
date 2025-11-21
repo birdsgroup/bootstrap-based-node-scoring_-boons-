@@ -1,4 +1,4 @@
-# Uncertainty-aware Gene Rankings for Network Measures
+# BOOtstrap-based Node Scores (BOONS)
 
 This repository contains scripts for implementation of the systematic workflow to generate uncertainty-aware gene rankings for downstream network (degree and PageRank centrality) measures, and their analyses.
 
