@@ -14,7 +14,7 @@ pathwayAnalysis <- function(centrality, gtype, tissue, parameter){
 
 
 Tissues <- c('Kidney_Cortex', 'Lung', 'Muscle_Skeletal', 'Pancreas', 'Pituitary', 'Stomach', 'Thyroid', 'Whole_Blood', 'Muscle_Skeletal_73', 'Muscle_Skeletal_237', 'Whole_Blood_73', 'Whole_Blood_237', 'Lung_237', 'Lung_73', 'Vagina')
-Parameters <- c('deg', 'mu', 'mu-2sigma', 'mu-sigma')
+Parameters <- c('obs', 'mu', 'mu-2sigma', 'mu-sigma')
 cores <- 4
 
 for (gtype in c('Elevated')) {
