@@ -64,24 +64,27 @@ Follow each step in order.
 
 4. **Computation of the metric values.**
 
-   1. Use any text editor to open `Parameter Analysis/code 3.py`
+   1. [Optional] Use any text editor to open `Validation Analysis/gene ordering.py` to generate a random ordering of the genes and modify as given below.
 
-   2. Modify the `tissues` variable with your tissue name.
-      For example, if you are doing this step for the tissues `Tissue1` and `Tissue_2`, then modify the `tissues` variable as: `tissues = ["Tissue1", "Tissue_2"]`.
-
-   3. Modify the `centrality` variable with the centrality for which you want to compute the metric values.
+   2. Use any text editor to open `Validation Analysis/rankings.py`
+   
+   3. Modify the `Tissues` variable with your tissue name.
+      For example, if you are doing this step for the tissues `Tissue1` and `Tissue_2` with sample sizes `s1` and `s2`, then modify the `Tissues` variable as: `Tissues = {"Tissue1": s1, "Tissue_2":s2}`.
+   
+   4. Modify the `centrality` variable with the centrality for which you want to compute the metric values.
       For example, if you are want to compute the values by the metrics for `degree` centrality, then set `centrality = 'degree'`.
 
       -  **Important Note:** In the current version, only `degree` or `pagerank` are the allowed options.
 
-   4. You can either run the file using your own python environments/compilers, or from the terminal as:
-
+   5. You can either run the file using your own python environments/compilers, or from the terminal as:
+   
       ```bash
-      cd ..\Parameter\ Analysis
-      python "code 3.py"
+      cd ..\Validation\ Analysis
+      python "gene ordering.py"
+      python "rankings.py"
       ```
-
-   5. The program will create `Parameter Analysis/metric values`, and  all your output files will be stored in the folder.
+   
+   6. The program will create `Rankings/ranks_<centrality>.xlsx`, and  all your outputs will be stored in the file.
 
 ### Repository Structure
 
