@@ -113,6 +113,9 @@ Each folder contains the scripts and results for the same analyses. The codes ha
 	# extracted covariate files for each tissue as provided by GTEx.
 |   +---Gene Expression Matrices 
 	# extracted gene expression files for each tissue as provided by GTEx.
+	'''
+	Note: The example dataset on the Muscle Skeletal tissue provided in this directory is the single-tissue cis-eQTL data downloaded from GTEx open access V8 data repository.
+	'''
 |   +---Genes
 	# extracted list of genes for each tissue as provided by GTEx.
 |   +---Preprocessed Files # the covariate adjusted files for each tissue.
