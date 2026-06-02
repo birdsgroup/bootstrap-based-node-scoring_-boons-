@@ -114,7 +114,8 @@ Each folder contains the scripts and results for the same analyses. The codes ha
 |   +---Gene Expression Matrices 
 	# extracted gene expression files for each tissue as provided by GTEx.
 	'''
-	Note: The example dataset on the Muscle Skeletal tissue provided in this directory is the single-tissue cis-eQTL data downloaded from GTEx open access V8 data repository.
+	Note: The example dataset on the Muscle Skeletal tissue provided in this directory corresponds to the
+		single-tissue cis-eQTL data downloaded from GTEx open access V8 data repository.
 	'''
 |   +---Genes
 	# extracted list of genes for each tissue as provided by GTEx.
@@ -142,7 +143,8 @@ Each folder contains the scripts and results for the same analyses. The codes ha
 |   |   +---Muscle_Skeletal_gtex
 |   |   +---Muscle_Skeletal_recount
 		'''
-		Note: The dataset on the Muscle Skeletal tissue provided in this directory and used for the replication analysis corresponds to SRA project id 'SRP300916' (GEO accession number 'GSE164471' and BioProject ID 'PRJNA690800') downloaded from the recount3 data repository.
+		Note: The dataset on the Muscle Skeletal tissue provided in this directory and used for the replication analysis corresponds to the
+			SRA project id 'SRP300916' (GEO accession number 'GSE164471' and BioProject ID 'PRJNA690800') downloaded from the recount3 data repository.
 		'''
 |   |   +---Preprocessed Files
 |   +---Analysis 
