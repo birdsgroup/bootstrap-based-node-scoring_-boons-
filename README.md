@@ -1,14 +1,15 @@
-# BOOtstrap-based Node Scores (BOONS)
+# Bootstrap-based Node Scores (BNS)
 
 This repository contains scripts for implementation of the systematic workflow to generate uncertainty-aware gene rankings for downstream network (degree and PageRank centrality) measures, and their analyses.
 
 ## Overview of the Project
 
 This project develops a systematic workflow that estimates and propagates uncertainty about the coexpression network to degree and PageRank centrality and produces robust (uncertainty-aware) gene rankings. 
-The workflow uses ‘*bootstrapping*’ to generate multiple measures for the centrality – mean $(\mu)$ and variance $(\sigma^2)$ of which were used to propose different uncertainty-aware gene rankings (BCMs) of the form $\mu-c\sigma$.
+The workflow uses ‘*bootstrapping*’ to generate multiple measures for the centrality – mean $(\mu)$, variance $(\sigma^2)$, and $\alpha$<sup>th</sup> percentile $`\hat{\theta}^{\star}_{\alpha}`$ of which were used to propose different uncertainty-aware gene rankings (BNSs) using the forms $\mu-c\sigma$ and $`\hat{\theta}^{\star}_{\alpha}`$.
 
 The project is implemented using the following programming languages: 
 
+-  *Preprocessing of real-world datasets*: R version 4.4.2
 -  *Functions for computations and analyses*: Python versions 3.10 and 3.12. 
    Packages like `numpy, pandas, scipy, random, corals.correlation` and `statsmodel` have been used repeatedly.
 -  *Covariate adjustment of the gene expression data and GSEA analysis using WebGestalt*: R versions 4.2 and 4.4
@@ -20,13 +21,13 @@ Note: Some of the codes have been designed to run parallelly on a server with $5
 ### Getting Started
 
 This section will help you set up the project for the first time — from cloning the repository to running a complete example. 
-Follow each step in order.
+Please follow each step in the given order.
 
 1. **Clone/download the project from GitHub to your local machine.**
 
    ```bash
-   git clone https://github.com/yourusername/yourproject.git
-   cd yourproject
+   git clone https://github.com/BIRDSgroup/Bootstrap-based_Node_Scorings_BNS.git BNSproject
+   cd BNSproject
    ```
 
 2. **Prepare input data.** 
@@ -39,7 +40,7 @@ Follow each step in order.
       -  Values = preprocessed gene expression values
       -  File name = `Tissue.csv`
    3. Place your genes file `genes.csv` containing the details of the genes in the same order as in `Tissue.csv` in the same location i.e., `Original Dataset/Preprocessed Files/Tissue/genes.csv`. 
-      If you don’t have information on the genes, then please copy the gene id’s from the 1^st^ column of `Tissue.csv` into `genes.csv`.
+      If you don’t have information on the genes, then please copy the gene id’s from the 1<sup>st</sup> column of `Tissue.csv` into `genes.csv`.
 
 3. **Bootstrapping and Computing the centrality measures for all the coexpression networks.**
 
@@ -60,11 +61,11 @@ Follow each step in order.
 
    5. The program runs on $50$ cores, however, if you want to reduce the number of cores, then use any text editor to open `Centrality Computation/main.sh` and update the `cores` variable with the number of cores you want to use.
 
-      -  **Important Note:** Please ensure the number of cores (`cores`) you are using is a factor of the number of bootstrapped coexpression networks (`B`) you are computing.
+      -  **Important Note:** Please ensure the number of cores (`cores`) you are using should be a factor of the number of bootstrapped coexpression networks (`B`) you are computing.
 
 4. **Computation of the metric values.**
 
-   1. [Optional] Use any text editor to open `Validation Analysis/gene ordering.py` to generate a random ordering of the genes and modify as given below.
+   1. [Optional] Use any text editor to open `Validation Analysis/gene ordering.py` to generate a random ordering of the genes as mentioned in 3.
 
    2. Use any text editor to open `Validation Analysis/rankings.py`
    
