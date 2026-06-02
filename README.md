@@ -141,6 +141,9 @@ Each folder contains the scripts and results for the same analyses. The codes ha
 	'''
 |   |   +---Muscle_Skeletal_gtex
 |   |   +---Muscle_Skeletal_recount
+		'''
+		Note: The dataset on the Muscle Skeletal tissue provided in this directory and used for the replication analysis corresponds to SRA project id 'SRP300916' (GEO accession number 'GSE164471' and BioProject ID 'PRJNA690800') downloaded from the recount3 data repository.
+		'''
 |   |   +---Preprocessed Files
 |   +---Analysis 
 	# scripts to compute the gene rankings and generate the plots.
