@@ -1,6 +1,8 @@
 # Bootstrap-based Node Scorings (BNS)
 
-This repository contains scripts for implementation of the systematic workflow to generate uncertainty-aware gene rankings for downstream network (degree and PageRank centrality) measures, and their analyses.
+This repository contains scripts for implementation of the systematic workflow to generate uncertainty-aware gene rankings for downstream network (degree and PageRank centrality) measures, and their analyses. This uncertainty-aware gene ranking workflow and associated data and results are explained in detail in the following manuscript. 
+
+_"Uncertainty-Aware Gene Rankings Reveal Key Players in Coexpression Networks". Sugyani Mahapatra, Nilesh Anantha Subramanian, Manikandan Narayanan. bioRxiv 2025.12.13.694156; doi: https://doi.org/10.64898/2025.12.13.694156_
 
 ## Overview of the Project
 
