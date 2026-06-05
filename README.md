@@ -296,9 +296,15 @@ However, to run the script for different input values, please do the following:
 
 This project is licensed under the Creative Commons License — see [License file](LICENSE)  for details.
 
-## Citation, Contact
+## Citation 
 
-To be updated following paper acceptance.
+_"Uncertainty-Aware Gene Rankings Reveal Key Players in Coexpression Networks". Sugyani Mahapatra, Nilesh Anantha Subramanian, Manikandan Narayanan. bioRxiv 2025.12.13.694156; doi: https://doi.org/10.64898/2025.12.13.694156_
+
+## Contact
+
+msugyani@cse.iitm.ac.in
+
+nmanik@cse.iitm.ac.in
 
 ## Acknowledgements
 
