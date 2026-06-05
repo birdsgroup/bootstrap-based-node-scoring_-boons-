@@ -1,4 +1,4 @@
-# Bootstrap-based Node Scores (BNS)
+# Bootstrap-based Node Scorings (BNS)
 
 This repository contains scripts for implementation of the systematic workflow to generate uncertainty-aware gene rankings for downstream network (degree and PageRank centrality) measures, and their analyses.
 
