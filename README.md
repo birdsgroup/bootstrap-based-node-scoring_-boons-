@@ -42,7 +42,7 @@ Please follow each step in the given order.
       -  Values = preprocessed gene expression values
       -  File name = `Tissue.csv`
    3. Place your genes file `genes.csv` containing the details of the genes in the same order as in `Tissue.csv` in the same location i.e., `Original Dataset/Preprocessed Files/Tissue/genes.csv`. 
-      If you don’t have information on the genes, then please copy the gene id’s from the 1<sup>st</sup> column of `Tissue.csv` into `genes.csv`.
+      If you don’t have information on the genes, then please copy the gene ids from the 1<sup>st</sup> column of `Tissue.csv` into `genes.csv`.
 
 3. **Bootstrapping and Computing the centrality measures for all the coexpression networks.**
 
@@ -77,7 +77,7 @@ Please follow each step in the given order.
    4. Modify the `centrality` variable with the centrality for which you want to compute the metric values.
       For example, if you are want to compute the values by the metrics for `degree` centrality, then set `centrality = 'degree'`.
 
-      -  **Important Note:** In the current version, only `degree` or `pagerank` are the allowed options.
+      -  **Important Note:** In the current version, only `degree` or `pagerank` (or `pr`) are the allowed options.
 
    5. You can either run the file using your own python environments/compilers, or from the terminal as:
    
@@ -87,7 +87,7 @@ Please follow each step in the given order.
       python "rankings.py"
       ```
    
-   6. The program will create `Rankings/ranks_<centrality>.xlsx`, and  all your outputs will be stored in the file.
+   6. The program will create `Rankings/ranks_<centrality>.xlsx`, and all your outputs will be stored in the file.
 
 ### Repository Structure
 
@@ -103,8 +103,8 @@ Each folder contains the scripts and results for the same analyses. The codes ha
 	Directory structure of the same is given below as an example.
 	/---T
 	|	error.txt 	# errors during the running of the code.
-	|	original_degree.csv # the degree cetrality of the genes (in the same order as in the 'genes.csv' file) by obs.
-	|	original_pagerank.csv # the PageRank cetrality of the genes (in the same order as in the 'genes.csv' file) by obs.
+	|	original_degree.csv # the degree centrality of the genes (in the same order as in the 'genes.csv' file) by obs.
+	|	original_pagerank.csv # the PageRank centrality of the genes (in the same order as in the 'genes.csv' file) by obs.
 	|	output.txt # outputs (if any) pertaining to the computation of centrality for the same tissue.
 	|	sample_degree.csv # the degree centrality values of the genes (in the same order as in the 'gnes.csv' file) in each bootstrapped coexpression network.
     |	sample_pagerank.csv # the PageRank centrality values of the genes (in the same order as in the 'genes.csv' file) in each bootstrapped coexpression network.
@@ -123,7 +123,7 @@ Each folder contains the scripts and results for the same analyses. The codes ha
 	# extracted list of genes for each tissue as provided by GTEx.
 |   +---Preprocessed Files # the covariate adjusted files for each tissue.
 	'''
-	For each tissue T, a folder with 3 files are generated.
+	For each tissue T, a folder with 3 files is generated.
 	- T.csv: the covariate adjusted coexpression matrix for T
 	- T_orig_filtered.csv: the original gene expression matrix for T but only for the protein-coding genes.
 	- genes.csv: information related to all protein-coding genes in T. Both degree/PageRank centrality values of all the genes are generated in the same order as in this file. 
@@ -134,7 +134,7 @@ Each folder contains the scripts and results for the same analyses. The codes ha
 
 +---Replication Analysis on RW Datasets
 |   +---Centrality Computation 
-	# scripts for centrality comptation of the discovery and real-world datasets
+	# scripts for centrality computation of the discovery and real-world datasets
 	# similar to the centrality computation on the GTEx tissues.
 |   +---Original Dataset
 	'''
@@ -218,9 +218,9 @@ Each folder contains the scripts and results for the same analyses. The codes ha
 
 ### Generating the centrality measures
 
-Before generating the centrality files, please ensure that the gene expression matrix ($\textrm{genes} \times \textrm{samples}$) is stored in a  comma-separated `.csv` file with the gene id’s as the first column and the sample ids as the first row.
+Before generating the centrality files, please ensure that the gene expression matrix ($\textrm{genes} \times \textrm{samples}$) is stored in a comma-separated `.csv` file with the gene ids as the first column and the sample ids as the first row.
 
-To generate the centrality measures for both degree and PageRank centrality and to replicate our the results, run `Centrality Computation/run.sh`
+To generate the centrality measures for both degree and PageRank centrality and to replicate the results, run `Centrality Computation/run.sh`
 
 1. Ensure the working directory is `Centrality Computation`.
 2. Set the value of `B` with the number of bootstrap coexpression networks you want to generate. 
@@ -268,12 +268,12 @@ To generate the rank files, run `2.2_rank files.py`. By default, the script will
 
 **I.** Run `2.1_gmt_code.py` to generate the customized gene set file. 
 
--  In the `main` block, set the variable `Tissues` with the list of tissues, whose specific genes you want to add in the gene set  file. Please add the list of tissues as a comma-separated list.
+-  In the `main` block, set the variable `Tissues` with the list of tissues, whose specific genes you want to add in the gene set file. Please add the list of tissues as a comma-separated list.
 -  The variable `gtype` stores the type of elevated expression category (see [here](https://www.proteinatlas.org/humanproteome/tissue/tissue+specific) for different categories).
 
 The program generates a customized gene set file `<gtype>.gmt` (in our case `Elevated.gmt`) in the same folder. 
 
-To change the destination location and/or name of the output file, please update line $12$ (`output = gtype + '.gmt'` in  `fun()` function definition).
+To change the destination location and/or name of the output file, please update line $12$ (`output = gtype + '.gmt'` in `fun()` function definition).
 
 **II.** To perform the GSEA analysis, please ensure the `WebGestaltR` package in already installed. 
 The R script `2.3_pathways.R` contains the full script to perform the GSEA analysis. 
@@ -284,7 +284,7 @@ However, to run the script for different input values, please do the following:
 
 -  *If you want to change the list of tissues*, please update the `Tissues` variable in line $16$.
 -  *If you want to run the analysis only for a subset of metrics*, please update the `Parameters` variable in line $17$.
--  By default the code uses $5$ *cores* to perform the analysis. If you want to change the same, please update `cores` variable in line $18$.
+-  By default, the code uses $5$ *cores* to perform the analysis. If you want to change the same, please update `cores` variable in line $18$.
 -  Please set the `centrality` and `gtype` variables with the *type/s of centrality measures and the elevated expression category*, as per your requirement, respectively, before invoking the `pathwayAnalysis()` function in line $31$.
 -  *If your rank files are in a different location*, please update the `ipfile` variable in line $7$ inside the `pathwayAnalysis()` with the source location of your file.
 -  *If you want to change your output location*, please update the `opfile` variable in line $8$ inside the `pathwayAnalysis()` with the destination location.
@@ -294,7 +294,7 @@ However, to run the script for different input values, please do the following:
 
 ## License
 
-This project is licensed under the Creative Commons License — see [License file](LICENSE)  for details.
+This project is licensed under the Creative Commons License — see [License file](LICENSE) for details.
 
 ## Citation 
 
