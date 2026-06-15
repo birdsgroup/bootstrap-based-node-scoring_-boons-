@@ -16,7 +16,7 @@ ScoreSystems = {
     'BooNS_0': r"\texttt{\textsc{BooNS}}\textsubscript{0}",
     'BooNS_1': r"\texttt{\textsc{BooNS}}\textsubscript{1}",
     'BooNS_2': r"\texttt{\textsc{BooNS}}\textsubscript{2}",
-    'BPCIlo_25': r"\texttt{\textsc{BPCIlo}}\textsubscript{25}"
+    'BPNS_25': r"\texttt{\textsc{BPNS}}\textsubscript{25}"
     }
 
 
